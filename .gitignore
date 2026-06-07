@@ -6,7 +6,7 @@ Thumbs.db
 node_modules/
 
 # Composer
-vendor/
+
 
 
 # WordPress config
