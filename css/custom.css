@@ -428,8 +428,9 @@ section.section {
 }
 
 .how-step-content > h4{
+    font-family: 'Poppins SemiBold Italic', sans-serif !important;
     margin-bottom: 3px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color:#fff;
 }
 
@@ -440,8 +441,9 @@ section.section {
 }
 
 .how-step-number{
-    font-size: 1.2rem !important;
+    font-size: 1.3rem !important;
     color:var(--secondary);
+    font-family: 'Poppins SemiBold Italic', sans-serif !important;
 }
 
 .how-to-order{
@@ -486,6 +488,7 @@ section.section {
     overflow: hidden;
     aspect-ratio: 4/5;
     width: 100%;
+    display: block;
  }
 
  .ig-img-container img{
