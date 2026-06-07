@@ -325,6 +325,39 @@ section.section {
 
 }
 
+.overlay:before {
+   background-color: var(--secondary-rgba-40);
+}
+
+.box-content i{
+    font-size: 4.5rem;
+}
+
+.box-content h2{
+   font-family: 'Pacifico Regular', cursive;
+   font-size: 2.5rem !important;
+   margin-top: 10px;
+}
+
+.box-content p{
+   font-family: 'Pacifico Regular', cursive;
+   font-size: 1rem !important;
+   color:#fff !important;
+   font-family: 'Poppins SemiBold Italic';
+}
+
+.btn-service{
+    font-family: 'Pacifico Regular', cursive !important;
+    text-transform: capitalize !important;
+    font-size: 1.2rem !important;
+}
+
+
+.featured-boxes-modern-style-1 .featured-box {
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+}
+
 
 
  .hero-banner{
