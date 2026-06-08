@@ -156,7 +156,6 @@
 
 
 body{
-    background-color: var(--secondary);
     font-family: 'Poppins Light', sans-serif !important;
     font-weight: 100 !important;
 }
@@ -212,8 +211,7 @@ body{
 
 .gazelle-page-header{
     background-color: var(--secondary-100);
-    margin-bottom: 0 !important;
-    padding: 35px 0 !important;
+    padding: 20px 0 !important;
 }
 
 .gazelle-page-header:after {
@@ -223,7 +221,19 @@ body{
 
 .gazelle-page-header-title{
     color:var(--primary) !important;
+    margin-bottom: 10px !important;
     font-family: "Poppins Medium", sans-serif;
+}
+
+.gazelle-page-header-title + p{
+    font-size: 1.2rem;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    font-family: "Poppins Medium", sans-serif;
+}
+
+.page-list-section{
+    padding: 25px 0;
 }
 
 
