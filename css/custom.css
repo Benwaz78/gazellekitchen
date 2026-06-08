@@ -211,7 +211,11 @@ body{
 
 .gazelle-page-header{
     background-color: var(--secondary-100);
-    padding: 20px 0 !important;
+    padding: 20px 0 5px 0 !important;
+}
+
+article.post{
+    padding-bottom: 20px;
 }
 
 .gazelle-page-header:after {
