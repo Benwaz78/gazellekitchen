@@ -236,6 +236,57 @@ body{
     padding: 25px 0;
 }
 
+ul.nav-list li a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 10px 0 10px 40px;
+    color: #666;
+    font-size: 1em;
+}
+
+ul.nav-list li a:before {
+    font-family: 'Font Awesome 6 Free';
+    content: var(--icon);
+    font-weight: 900;
+    position: absolute;
+    top: 10px;
+    font-size: 7.2px;
+    font-size: 1rem;
+    opacity: 0.7;
+    left: 12px;
+    display: inline-block;
+}
+
+ul.nav-list li > a.active{
+  background-color: #fff;
+  border-left: 4px solid var(--secondary);
+  color:#000;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+ul.nav-list li > a:hover::before {
+    color: #fff;
+    opacity: 1;
+}
+
+ul.nav-list li > a:hover{
+  background-color: var(--primary);
+  border-left: none;
+  color:#fff !important;
+  opacity: 1 !important;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+
+
+ul.nav-list li > a.active::before {
+    font-family: 'Font Awesome 6 Free';
+    content: var(--icon);
+    color: var(--secondary);
+    border-radius: 20px !important;
+}
+
 
 .menu-btn:hover{
     background-color: var(--primary) !important;
@@ -542,6 +593,12 @@ section.section {
  }
 
 
+ .menu-filter {
+     position: sticky;
+     top: 100px;
+ }
+
+
 
 
 
@@ -584,6 +641,42 @@ section.section {
     .country-banner-text i{
         color:#fff;
     }
+
+    .menu-filter {
+            position: static;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 10px;
+        }
+
+        .menu-filter.nav-list {
+            flex-direction: row !important;
+            flex-wrap: nowrap;
+            gap: 10px;
+        }
+
+        .menu-filter .nav-item {
+            flex: 0 0 auto;
+        }
+
+        .menu-filter .nav-link {
+            border-radius: 10px;
+            padding: 10px 16px 10px 38px;
+            background: #fff;
+            border: 1px solid #eee;
+            position: relative;
+        }
+
+        .menu-filter .nav-link.active {
+            border-left: none;
+            background: var(--primary);
+            color: #fff !important;
+        }
+
+        .menu-filter .nav-link.active::before {
+            color: inherit !important;
+             opacity: 1 !important;
+        }
 }
 
 
