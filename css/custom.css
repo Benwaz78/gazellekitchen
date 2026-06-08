@@ -226,7 +226,7 @@ article.post{
 .gazelle-page-header-title{
     color:var(--primary) !important;
     margin-bottom: 10px !important;
-    font-family: "Poppins Medium", sans-serif;
+    font-family: "Poppins Bold", sans-serif;
 }
 
 .gazelle-page-header-title + p{
@@ -272,6 +272,7 @@ ul.nav-list li > a:hover::before {
     color: #fff;
     opacity: 1;
 }
+
 
 ul.nav-list li > a:hover{
   background-color: var(--primary);
@@ -407,7 +408,7 @@ section.section {
 }
 
 .menu-title{
-    font-family: 'Poppins SemiBold', sans-serif;
+    font-family: 'Poppins Bold', sans-serif;
     font-size: 1.2rem !important;
 
 }
