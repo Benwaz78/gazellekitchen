@@ -160,6 +160,18 @@ body{
     font-weight: 100 !important;
 }
 
+h1, h2, h3, h4, h5, h6{
+    font-family: "Poppins Bold", sans-serif !important;
+}
+
+.wp-block-heading{
+    font-family: "Poppins Bold", sans-serif !important;
+}
+
+.wp-block-list li{
+    font-family: 'Poppins Light', sans-serif !important;
+}
+
 .bg-light{
     background-color: var(--secondary-100) !important;
 }
@@ -214,6 +226,34 @@ body{
     background-color: var(--secondary-100);
     padding: 20px 0 5px 0 !important;
 }
+
+.gazelle-page-header-bg-container{
+    background-image: var(--page-desktop) !important;
+    padding: 50px 0 160px 0;
+    background: no-repeat center/cover;
+}
+
+.gazelle-page-header-bg-container h1{
+    font-size: 4rem;
+    font-family: "Poppins Bold", sans-serif;
+    margin: 10px 0;
+}
+
+.gazelle-page-header-bg-container h2{
+    font-size: 1.7rem;
+    font-family: "Poppins Medium", sans-serif;
+    margin: 20px 0 10px 0;
+    color: #423e3e;
+}
+
+.gazelle-page-header-bg-container p{
+    font-size: 0.95rem;
+    font-family: "Poppins Medium", sans-serif;
+    margin: 8px 0 10px 0;
+    color: #423e3e;
+    width: 50%;
+}
+
 
 .what-we-do{
     font-family: "Poppins Bold", sans-serif;
@@ -709,7 +749,8 @@ section.section {
 
 
  .testimonial{
-     height: 500px;
+     height: 400px;
+     width: 100%;
      display: flex;
      align-items: center;
      justify-content: center;
@@ -725,13 +766,25 @@ section.section {
 
  .ig-img-container{
     overflow: hidden;
-    aspect-ratio: 4/5;
+    aspect-ratio: 1/1;
     display: inline-block;
     margin-right: 10px;
+    border:2px solid #ddd;
+ }
+
+ .owl-carousel .owl-dots .owl-dot span {
+     width: 20px;
+     height: 20px;
+     margin: 3px 4px;
+ }
+
+ .owl-theme .owl-nav.disabled+.owl-dots {
+     margin-top: -10px;
  }
 
  .img-thumbnail{
     border-radius: 2px !important;
+    border-width: none !important;
  }
  .ig-img-container img{
     display: block;
@@ -763,6 +816,55 @@ section.section {
      position: sticky;
      top: 100px;
  }
+
+ .menus-prep-section h1.wp-block-heading,
+ .menus-prep-section h2.wp-block-heading,
+ .menus-prep-section h3.wp-block-heading,
+ .menus-prep-section h4.wp-block-heading,
+ .menus-prep-section h5.wp-block-heading,
+ .menus-prep-section h6.wp-block-heading{
+    font-family: "Poppins SemiBold", sans-serif !important;
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    color: #363333 !important;
+    padding: 2px 0 !important;
+ }
+
+ .menus-prep-section h1.wp-block-heading{
+    font-size: 1.4rem;
+ }
+
+ .menus-prep-section h2.wp-block-heading{
+    font-size: 1.3rem;
+ }
+
+ .menus-prep-section h3.wp-block-heading{
+    font-size: 1.2rem;
+ }
+
+ .menus-prep-section h4.wp-block-heading{
+    font-size: 1.1rem;
+ }
+
+ .menus-prep-section h5.wp-block-heading{
+    font-size: 1rem;
+ }
+
+ .menus-prep-section h6.wp-block-heading{
+    font-size: 0.9rem;
+ }
+
+ .menus-prep-section p{
+    font-size: 0.85rem;
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    font-family: "Poppins SemiBold", sans-serif;
+ }
+
+.site-footer h5{
+    font-size: 1rem !important;
+}
+
 
 
 
@@ -842,6 +944,68 @@ section.section {
         .menu-filter .nav-link.active::before {
             color: inherit !important;
              opacity: 1 !important;
+        }
+
+        .gazelle-page-header{
+            background-color: var(--secondary-100);
+            padding: 20px 0 5px 0 !important;
+        }
+
+        .gazelle-page-header-bg-container{
+            background-image: var(--page-mobile) !important;
+            padding-top: 0 !important;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gazelle-page-header-bg-container:before{
+            content: "";
+            padding: 50px 0 120px 0 !important;
+            display: block;
+            background-color: rgba(0, 0, 0, 0.45);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+        }
+
+        .gazelle-page-header-bg-container h1{
+            font-size: 4rem;
+            font-family: "Poppins Bold", sans-serif;
+            text-align: center;
+            margin: 0 0 10px 0;
+            padding-top: 50px !important;
+        }
+
+        .gazelle-page-header-bg-container h2{
+            font-size: 1.7rem;
+            font-family: "Poppins Bold", sans-serif;
+            text-align: center;
+            margin: 20px 0 10px 0;
+        }
+
+        .gazelle-page-header-bg-container p{
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: "Poppins Medium", sans-serif;
+            margin: 8px auto 10px auto;
+            color: #423e3e;
+            width: 80%;
+        }
+
+        .gazelle-page-header-bg-container h1,
+        .gazelle-page-header-bg-container h2,
+        .gazelle-page-header-bg-container p{
+            color: #fff;
+        }
+
+        .gazelle-page-header-bg-container .container{
+            position: relative;
+            z-index: 2;
         }
 }
 
