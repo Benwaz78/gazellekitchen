@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6{
 .gazelle-page-header-bg-container p{
     font-size: 0.95rem;
     font-family: "Poppins Medium", sans-serif;
-    margin: 8px 0 10px 0;
+    margin: 2px 0 10px 0;
     color: #423e3e;
     width: 50%;
 }
@@ -989,10 +989,10 @@ section.section {
         }
 
         .gazelle-page-header-bg-container p{
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-align: center;
             font-family: "Poppins Medium", sans-serif;
-            margin: 8px auto 10px auto;
+            margin: 2px auto 10px auto;
             color: #423e3e;
             width: 80%;
         }
