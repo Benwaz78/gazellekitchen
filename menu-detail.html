@@ -83,11 +83,11 @@
 														</a>
 													</li>
 													<li>
-														<a  href="menu-detail.html" 
-														class="btn btn-primary menu-whatsapp">
-															<i class="fa-brands fa-whatsapp"></i>
-															&nbsp;
-															Order on WhatsApp
+														<a  href="catering.html" class="position-relative d-inline-block pt-3">
+															<i class="fa-solid fa-cart-shopping"></i>
+															<span class="cart-barge badge rounded-pill bg-danger">
+												            3
+													        </span>
 														</a>
 													</li>
 													
@@ -107,7 +107,7 @@
 				</div>
 			</header>
 
-			<div role="main" class="main">
+			<div role="main" class="main shop">
 				
 				
 				<section class="section bg-white">
@@ -173,82 +173,31 @@
 
 								<h3 class="menu-detail-price">&euro; 50 </h3>
 								<p class="availabilty-container">Availability: <span class="availabilty-status">AVAILABLE</span></p>
-								<form class="order-form mb-3">
-									<label for="sizes">Available Sizes</label>
-									<select id="sizes" class="form-control w-50" name="sizes">
-										<option value="" selected>Available Size</option>
-										<option value="Small Tray">Small Tray</option>
-										<option value="Medium Tray">Medium Tray</option>
-										<option value="Large Tray">Large Tray</option>
-									</select>
-								</form>
+								
+								<p class="mb-1">Portion Size</p>
+								<div class="row">
+									<div class="col-lg-6">
+										<a href="#" class="btn btn-primary w-100">3L</a>
+									</div>
+									<div class="col-lg-6">
+										<a href="#" class="btn bg-white border-1 text-color-dark w-100">5L</a>
+									</div>
+								</div>
+								
+								
 								<hr>
 								
 
-								<form class="order-form">
-									<div class="mb-2">
-										<label for="fullName">Fullname*</label>
-										<input 
-										id="fullName" 
-										type="text" 
-										placeholder="Firstname Lastname*" 
-										class="form-control" 
-										name="fullName">
-									</div>
-									<div class="row">
-										<div class="col-lg-6 mb-2">
-											<label for="phoneNumber">Phone Number*</label>
-											<input 
-											id="phoneNumber" 
-											type="text" 
-											placeholder="Phone Number" 
-											class="form-control" 
-											name="phoneNumber">
-										</div>
-										<div class="col-lg-6 mb-2">
-											<label for="phoneNumber">Delivery City*</label>
-											<input 
-											id="deliveryCity" 
-											type="text" 
-											placeholder="Delivery City" 
-											class="form-control" 
-											name="deliveryCity">
-										</div>
-									</div>
+								<form enctype="multipart/form-data" method="post" class="cart" action="shop-cart.html">
 									
-									<div class="row">
-										<div class="col-lg-6 mb-2">
-											<label for="quantity">Quantity*</label>
-											<input 
-											id="quantity" 
-											type="number" 
-											placeholder="Quantity*" 
-											class="form-control" 
-											name="quantity">
-										</div>
-										<div class="col-lg-6 mb-2">
-											<label for="deliveryDate">Preferred Delivery Date</label>
-											<input 
-											id="deliveryDate" 
-											type="date" 
-											placeholder="Preferred Delivery Date" 
-											class="form-control" 
-											name="deliveryDate">
-										</div>
+									<div class="quantity quantity-lg">
+										<input type="button" class="minus text-color-hover-light bg-color-hover-primary border-color-hover-primary" value="-">
+										<input type="text" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+										<input type="button" class="plus text-color-hover-light bg-color-hover-primary border-color-hover-primary" value="+">
 									</div>
-									<div class="row">
-										<div class="col-lg-12">
-											<label>Special Instruction</label>
-											<textarea rows="10" class="form-control" name="specialInstruction"></textarea>
-										</div>
-									</div>
-									<button type="submit" class="btn btn-primary mt-3 w-100">
-										<i class="fa-brands fa-whatsapp"></i>
-										Order on WhatsApp
-									</button>
-									
-									
-								</form>
+									<button type="submit" class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary">Add to cart</button>
+									<hr>
+							</form>
 							</div>
 						</div>
 					</div>

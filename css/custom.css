@@ -477,6 +477,12 @@ ul.nav-list li > a.active::before {
     font-size: 13px !important;
 }
 
+.cart-barge{
+    position: absolute;
+    top: -5px;
+    right: 5px;
+}
+
 
 
 

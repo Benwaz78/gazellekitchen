@@ -38,6 +38,7 @@
 		<link rel="stylesheet" href="css/theme-shop.css">
 
 		<!-- Skin CSS -->
+		<link id="skinCSS" rel="stylesheet" href="css/default.css">
 		<link id="skinCSS" rel="stylesheet" href="css/gazelle-skin.css">
 
 		<!-- Theme Custom CSS -->
@@ -106,7 +107,7 @@
 					</div>
 				</div>
 			</header>
-			<div role="main" class="main">
+			<div role="main" class="main shop">
 				
 				<section 
 				class="gazelle-page-header-bg-container menu-header-padding" 
@@ -116,185 +117,254 @@
 					<div class="container">
 						<div class="row justify-content-start">
 							<div class="col-md-12">
-								<h1 class="text-white">Protiens</h1>
-								<p class="text-white">
-								  Choose from our selection of flavourful Nigerian proteins, perfectly seasoned and prepared to complement any meal.
-							    </p>
-								
+								<h1 class="text-white">Shopping Cart</h1>
 							</div>
 						</div>
 					</div>
 				</section>
 				<section class="page-list-section bg-light">
 					<div class="container">
-						<div class="row">
-						  <div class="col-md-6 col-lg-4 sides">
-						  	<article class="post">
-						  		<div class="card rounded-3 border-0 bg-transparent box-shadow-10 box-shadow-1 box-shadow-1-hover anim-hover-translate-top-10px transition-3ms">
-						  			<div class="rounded-3">
-						  				<a href="menu-detail.html" class="text-decoration-none menu-img-container">
-						  					<img  src="img/menus/meal-prep.jpg" alt="Card Image">
-						  				</a>
-						  				<div class="card-body px-0 bg-white py-0">
-						  				    <div class="px-3 py-2">	
-						  				    	<h4 class="my-1"><a href="menu-detail.html" class="text-decoration-none menu-title">
-						  				    		Peppered Chicken
-						  				    	</a></h4>
-						  				    	<p class="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing onsectetur.</p>
-						  				    	<div class="d-flex justify-content-between align-items-center">
-						  				    		<span class="menu-price">
-						  				    			&euro;60
-						  				    		</span>
-						  				    		<a href="menu-detail.html" 
-						  				    		class="text-secondary font-weight-semibold text-2">View Details <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
-						  				    	</div>
-						  				    	
-						  				    </div>	
-						  					
-						  					<a href="#" class="btn rounded-0 cart-fs  py-2 w-100 btn-primary">
-						  					<i class="icon-basket"></i>
-						  					 Add To Cart
-						  					</a>
-						  				</div>
+						<form role="form" class="needs-validation" method="post" action="">
+							<div class="row">
+								<div class="col-lg-7 mb-4 mb-lg-0">
 
-						  			</div>
-						  		</div>
-						  	</article>
-						  </div>
-						  <div class="col-md-6 col-lg-4 sides">
-						  	<article class="post">
-						  		<div class="card rounded-3 border-0 bg-transparent box-shadow-10 box-shadow-1 box-shadow-1-hover anim-hover-translate-top-10px transition-3ms">
-						  			<div class="rounded-3">
-						  				<a href="menu-detail.html" class="text-decoration-none menu-img-container">
-						  					<img  src="img/menus/meal-prep.jpg" alt="Card Image">
-						  				</a>
-						  				<div class="card-body px-0 bg-white py-0">
-						  				    <div class="px-3 py-2">	
-						  				    	<h4 class="my-1"><a href="menu-detail.html" class="text-decoration-none menu-title">
-						  				    		Turkey
-						  				    	</a></h4>
-						  				    	<p class="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing onsectetur.</p>
-						  				    	<div class="d-flex justify-content-between align-items-center">
-						  				    		<span class="menu-price">
-						  				    			&euro;60
-						  				    		</span>
-						  				    		<a href="menu-detail.html" 
-						  				    		class="text-secondary font-weight-semibold text-2">View Details <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
-						  				    	</div>
-						  				    	
-						  				    </div>	
-						  					
-						  					<a href="#" class="btn rounded-0 cart-fs  py-2 w-100 btn-primary">
-						  					<i class="icon-basket"></i>
-						  					 Add To Cart
-						  					</a>
-						  				</div>
+									<h2 class="text-color-dark font-weight-bold text-5-5 mb-3">Billing Details</h2>
+									<div class="row">
+										<div class="form-group col-md-6">
+											<label class="form-label">First Name <span class="text-color-danger">*</span></label>
+											<input type="text" class="form-control h-auto py-2" name="firstName" value="" required />
+										</div>
+										<div class="form-group col-md-6">
+											<label class="form-label">Last Name <span class="text-color-danger">*</span></label>
+											<input type="text" class="form-control h-auto py-2" name="lastName" value="" required />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col">
+											<label class="form-label">Company Name</label>
+											<input type="text" class="form-control h-auto py-2" name="companyName" value="" />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col">
+											<label class="form-label">Country/Region <span class="text-color-danger">*</span></label>
+											<div class="custom-select-1">
+												<select class="form-select form-control h-auto py-2" name="country" required>
+													<option value="" selected></option>
+													<option value="usa">United States</option>
+													<option value="spa">Spain</option>
+													<option value="fra">France</option>
+													<option value="uk">United Kingdon</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col">
+											<label class="form-label">Street Address <span class="text-color-danger">*</span></label>
+											<input type="text" class="form-control h-auto py-2" name="address1" value="" placeholder="House number and street name" required />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col">
+											<input type="text" class="form-control h-auto py-2" name="address2" value="" placeholder="Apartment, suite, unit, etc..." required />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col">
+											<label class="form-label">Town/City <span class="text-color-danger">*</span></label>
+											<input type="text" class="form-control h-auto py-2" name="city" value="" required />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col">
+											<label class="form-label">State <span class="text-color-danger">*</span></label>
+											<div class="custom-select-1">
+												<select class="form-select form-control h-auto py-2" name="state" required>
+													<option value="" selected></option>
+													<option value="ny">Nova York</option>
+													<option value="ca">California</option>
+													<option value="tx">Texas</option>
+													<option value="">Florida</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col">
+											<label class="form-label">ZIP <span class="text-color-danger">*</span></label>
+											<input type="text" class="form-control h-auto py-2" name="zip" value="" required />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col">
+											<label class="form-label">Phone <span class="text-color-danger">*</span></label>
+											<input type="number" class="form-control h-auto py-2" name="phone" value="" required />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col">
+											<label class="form-label">Email Address <span class="text-color-danger">*</span></label>
+											<input type="email" class="form-control h-auto py-2" name="email" value="" required />
+										</div>
+									</div>
+									
+									
+									<!-- Ship to a differente address fields -->
+									<div class="shipping-field-wrapper collapse">
+										<div class="row">
+											<div class="form-group col-md-6">
+												<label class="form-label">First Name <span class="text-color-danger">*</span></label>
+												<input type="text" class="form-control h-auto py-2" name="shippingFirstName" value="" required />
+											</div>
+											<div class="form-group col-md-6">
+												<label class="form-label">Last Name <span class="text-color-danger">*</span></label>
+												<input type="text" class="form-control h-auto py-2" name="shippingLastName" value="" required />
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col">
+												<label class="form-label">Company Name</label>
+												<input type="text" class="form-control h-auto py-2" name="shippingCompanyName" value="" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col">
+												<label class="form-label">Country/Region <span class="text-color-danger">*</span></label>
+												<div class="custom-select-1">
+													<select class="form-select form-control h-auto py-2" name="shippingCountry" required>
+														<option value="" selected></option>
+														<option value="usa">United States</option>
+														<option value="spa">Spain</option>
+														<option value="fra">France</option>
+														<option value="uk">United Kingdon</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col">
+												<label class="form-label">Street Address <span class="text-color-danger">*</span></label>
+												<input type="text" class="form-control h-auto py-2" name="shippingAddress1" value="" placeholder="House number and street name" required />
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col">
+												<input type="text" class="form-control h-auto py-2" name="shippingAddress2" value="" placeholder="Apartment, suite, unit, etc..." required/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col">
+												<label class="form-label">Town/City <span class="text-color-danger">*</span></label>
+												<input type="text" class="form-control h-auto py-2" name="shippingCity" value="" required />
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col">
+												<label class="form-label">State <span class="text-color-danger">*</span></label>
+												<div class="custom-select-1">
+													<select class="form-select form-control h-auto py-2" name="shippingState" required>
+														<option value="" selected></option>
+														<option value="ny">Nova York</option>
+														<option value="ca">California</option>
+														<option value="tx">Texas</option>
+														<option value="">Florida</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col">
+												<label class="form-label">ZIP <span class="text-color-danger">*</span></label>
+												<input type="text" class="form-control h-auto py-2" name="shippingZip" value="" required />
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col">
+												<label class="form-label">Phone <span class="text-color-danger">*</span></label>
+												<input type="number" class="form-control h-auto py-2" name="shippingPhone" value="" required />
+											</div>
+										</div>
+										<!-- End of Ship to a differente address fields -->
+									</div>
+									<div class="row">
+										<div class="form-group col">
+											<label class="form-label">Order Notes</label>
+											<textarea class="form-control h-auto py-2" name="orderNotes" rows="5" placeholder="Notes about you orderm e.g. special notes for delivery"></textarea>
+										</div>
+									</div>
 
-						  			</div>
-						  		</div>
-						  	</article>
-						  </div>
-						  <div class="col-md-6 col-lg-4 sides">
-						  	<article class="post">
-						  		<div class="card rounded-3 border-0 bg-transparent box-shadow-10 box-shadow-1 box-shadow-1-hover anim-hover-translate-top-10px transition-3ms">
-						  			<div class="rounded-3">
-						  				<a href="menu-detail.html" class="text-decoration-none menu-img-container">
-						  					<img  src="img/menus/meal-prep.jpg" alt="Card Image">
-						  				</a>
-						  				<div class="card-body px-0 bg-white py-0">
-						  				    <div class="px-3 py-2">	
-						  				    	<h4 class="my-1"><a href="menu-detail.html" class="text-decoration-none menu-title">
-						  				    		Beef
-						  				    	</a></h4>
-						  				    	<p class="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing onsectetur.</p>
-						  				    	<div class="d-flex justify-content-between align-items-center">
-						  				    		<span class="menu-price">
-						  				    			&euro;60
-						  				    		</span>
-						  				    		<a href="menu-detail.html" 
-						  				    		class="text-secondary font-weight-semibold text-2">View Details <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
-						  				    	</div>
-						  				    	
-						  				    </div>	
-						  					
-						  					<a href="#" class="btn rounded-0 cart-fs  py-2 w-100 btn-primary">
-						  					<i class="icon-basket"></i>
-						  					 Add To Cart
-						  					</a>
-						  				</div>
+								</div>
+								<div class="col-lg-5 position-relative">
+									<div class="card border-width-3 border-radius-0 border-color-hover-dark" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.row', 'padding': {'top': 85}}">
+										<div class="card-body">
+											<h4 class="font-weight-bold text-uppercase text-4 mb-3">Your Order</h4>
+											<table class="shop_table cart-totals mb-3">
+												<tbody>
+													<tr>
+														<td colspan="2" class="border-top-0">
+															<strong class="text-color-dark">Menu</strong>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<strong class="d-block text-color-dark line-height-1 font-weight-semibold">Pepper Soup <span class="product-qty">x1</span></strong>
+														</td>
+														<td class="text-end align-top">
+															<span class="amount font-weight-medium text-color-grey">&euro;15</span>
+														</td>
+													</tr>
+													<tr>
+														<td class="border-top-0 pt-0">
+															<strong class="d-block text-color-dark line-height-1 font-weight-semibold">Jellof Rice <span class="product-qty">x1</span></strong>
+														</td>
+														<td class="border-top-0 text-end align-top pt-0">
+															<span class="amount font-weight-medium text-color-grey">&euro;15</span>
+														</td>
+													</tr>
+													<tr class="cart-subtotal">
+														<td class="border-top-0">
+															<strong class="text-color-dark">Subtotal</strong>
+														</td>
+														<td class="border-top-0 text-end">
+															<strong><span class="amount font-weight-medium">&euro;431</span></strong>
+														</td>
+													</tr>
+													
+													<tr class="total">
+														<td>
+															<strong class="text-color-dark text-3-5">Total</strong>
+														</td>
+														<td class="text-end">
+															<strong class="text-color-dark"><span class="amount text-color-dark text-5">&euro;431</span></strong>
+														</td>
+													</tr>
+													<tr class="payment-methods">
+														<td colspan="2">
+															<strong class="d-block text-color-dark mb-2">Payment Methods</strong>
 
-						  			</div>
-						  		</div>
-						  	</article>
-						  </div>
-						  <div class="col-md-6 col-lg-4 sides">
-						  	<article class="post">
-						  		<div class="card rounded-3 border-0 bg-transparent box-shadow-10 box-shadow-1 box-shadow-1-hover anim-hover-translate-top-10px transition-3ms">
-						  			<div class="rounded-3">
-						  				<a href="menu-detail.html" class="text-decoration-none menu-img-container">
-						  					<img  src="img/menus/meal-prep.jpg" alt="Card Image">
-						  				</a>
-						  				<div class="card-body px-0 bg-white py-0">
-						  				    <div class="px-3 py-2">	
-						  				    	<h4 class="my-1"><a href="menu-detail.html" class="text-decoration-none menu-title">
-						  				    		Goat Meat
-						  				    	</a></h4>
-						  				    	<p class="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing onsectetur.</p>
-						  				    	<div class="d-flex justify-content-between align-items-center">
-						  				    		<span class="menu-price">
-						  				    			&euro;60
-						  				    		</span>
-						  				    		<a href="menu-detail.html" 
-						  				    		class="text-secondary font-weight-semibold text-2">View Details <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
-						  				    	</div>
-						  				    	
-						  				    </div>	
-						  					
-						  					<a href="#" class="btn rounded-0 cart-fs  py-2 w-100 btn-primary">
-						  					<i class="icon-basket"></i>
-						  					 Add To Cart
-						  					</a>
-						  				</div>
-
-						  			</div>
-						  		</div>
-						  	</article>
-						  </div>
-						  <div class="col-md-6 col-lg-4 sides">
-						  	<article class="post">
-						  		<div class="card rounded-3 border-0 bg-transparent box-shadow-10 box-shadow-1 box-shadow-1-hover anim-hover-translate-top-10px transition-3ms">
-						  			<div class="rounded-3">
-						  				<a href="menu-detail.html" class="text-decoration-none menu-img-container">
-						  					<img  src="img/menus/meal-prep.jpg" alt="Card Image">
-						  				</a>
-						  				<div class="card-body px-0 bg-white py-0">
-						  				    <div class="px-3 py-2">	
-						  				    	<h4 class="my-1"><a href="menu-detail.html" class="text-decoration-none menu-title">
-						  				    		Pepper Soup
-						  				    	</a></h4>
-						  				    	<p class="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing onsectetur.</p>
-						  				    	<div class="d-flex justify-content-between align-items-center">
-						  				    		<span class="menu-price">
-						  				    			&euro;60
-						  				    		</span>
-						  				    		<a href="menu-detail.html" 
-						  				    		class="text-secondary font-weight-semibold text-2">View Details <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
-						  				    	</div>
-						  				    	
-						  				    </div>	
-						  					
-						  					<a href="#" class="btn rounded-0 cart-fs  py-2 w-100 btn-primary">
-						  					<i class="icon-basket"></i>
-						  					 Add To Cart
-						  					</a>
-						  				</div>
-
-						  			</div>
-						  		</div>
-						  	</article>
-						  </div>
-							
-						</div>
+															<div class="d-flex flex-column">
+																
+																<label class="d-flex align-items-center text-color-grey mb-0" for="payment_method2">
+																	<input id="payment_method2" type="radio" class="me-2" name="payment_method" value="paypal" />
+																	PayPal
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="2">
+															Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<button type="submit" class="btn btn-dark btn-modern w-100 text-uppercase bg-color-hover-primary border-color-hover-primary border-radius-0 text-3 py-3">Place Order <i class="fas fa-arrow-right ms-2"></i></button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
 					</div>
 				</section>
 
