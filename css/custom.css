@@ -164,6 +164,14 @@ h1, h2, h3, h4, h5, h6{
     font-family: "Poppins Bold", sans-serif;
 }
 
+a{
+    color:#000;
+}
+
+li{
+    color:#000;
+}
+
 a:hover{
     color: var(--secondary);
 }
@@ -238,8 +246,8 @@ p{
 }
 
 #flag {
-    width: 160px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     box-sizing: content-box;
     padding-top: 0;
     aspect-ratio: 1/1;
@@ -461,7 +469,7 @@ ul.nav-list li > a.active::before {
 
 
 #mainNav li a{
-    color:#757171 !important;
+    color:#000 !important;
     font-family: 'Poppins Light', sans-serif;
     text-transform: capitalize !important;
     font-weight: 100;
@@ -690,6 +698,25 @@ section.section {
 
 .gazelle-list-icons li i{
     color:#fff !important;
+}
+
+.catering-list i{
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: gold;
+}
+
+.catering-list h2{
+    font-size: 1.3rem;
+    line-height: 2px;
+    margin-bottom: 18px;
+}
+
+.catering-price{
+    margin: 10px 0;
+    font-family: "Poppins Bold", sans-serif;
+    color:var(--secondary);
 }
 
 
