@@ -520,12 +520,14 @@ ul.nav-list li > a.active::before {
     margin: 0.3rem 0 !important;
 }
 
-#mainNav li a.active{
+#mainNav .current-menu-item > a,
+#mainNav .current_page_item > a {
     color: var(--secondary) !important;
-    background-color: transparent !important;
+    background: transparent !important;
 }
 
-#mainNav li a:hover{
+#mainNav .current-menu-item > a:hover,
+#mainNav .current_page_item > a:hover{
     color: var(--secondary) !important;
     background-color: transparent !important;
     border-color: var(--secondary) var(--secondary) var(--secondary);
