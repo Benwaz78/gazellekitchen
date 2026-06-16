@@ -213,6 +213,10 @@ p{
     font-size: 0.70rem;
 }
 
+.header-bg{
+    background-color: #0e4408 !important;
+}
+
 
 #header .header-nav-main.header-nav-main-square nav > ul > li > a {
     border-radius: 0 !important;
@@ -232,11 +236,37 @@ p{
     background-color: var(--secondary) !important;
 }
 
+#header .header-nav-main:not(.header-nav-main-mobile-dark) nav > ul > li > a {
+    color: #fff !important;
+    border-bottom: none !important;
+}
+
 
 #header,
 #header .header-body {
     position: relative;
 }
+
+#newLogoContainer{
+    height: 80px;
+    width: 100px;
+}
+
+html.sticky-header-active #header .header-body {
+    position: fixed;
+    border-bottom-color: #0e4408;
+    box-shadow: 0 0 3px #0e4408;
+}
+
+#header .header-nav-main:before {
+        background: #0e4408;
+}
+
+#newLogoContainer img{
+    height: 80px;
+    width: auto;
+}
+
 
 #logoContainer {
     position: absolute;
@@ -469,7 +499,7 @@ ul.nav-list li > a.active::before {
 
 
 #mainNav li a{
-    color:#000 !important;
+    color:#fff !important;
     font-family: 'Poppins Light', sans-serif;
     text-transform: capitalize !important;
     font-weight: 100;
@@ -1110,6 +1140,21 @@ section.section {
 
 
 @media (max-width: 767px){
+
+    #header .header-column .header-row {
+        justify-content: space-between;
+    }
+
+  #header .header-row {
+      display: flex;
+       flex-grow: initial; 
+      align-items: center;
+      width: 100%;
+       align-self: initial; 
+      max-height: 100%;
+  }
+
+
   .hero-banner{
       min-height: 500px;
       background-image: var(--hero-mobile) !important;
@@ -1279,7 +1324,7 @@ section.section {
         }
 
         #mainNav{
-            margin-top: 80px;
+            margin-top: 5px;
         }
 
         
