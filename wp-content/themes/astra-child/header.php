@@ -6,8 +6,8 @@
     <?php wp_head(); ?>
 </head>
 
-<body data-plugin-page-transition <?php body_class(); ?>>
-		<div class="body position-relative">
+<body data-plugin-page-transition>
+		<div class="body">
 			<header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyChangeLogo': false, 'stickyStartAt': 0}">
 				<div class="header-body header-bg border-top-0">
 					<!-- <div id="newLogoContainer"> -->

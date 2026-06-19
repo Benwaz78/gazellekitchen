@@ -163,6 +163,14 @@ function gazelles_enqueue_assets() {
         $version,
         true
     );
+
+    wp_enqueue_script(
+        'gazelle-gallery',
+        $theme_uri . '/assets/js/examples/examples.gallery.js',
+        ['gazelle-theme'],
+        $version,
+        true
+    );
 }
 
 add_action('wp_enqueue_scripts', 'gazelles_enqueue_assets', 20);

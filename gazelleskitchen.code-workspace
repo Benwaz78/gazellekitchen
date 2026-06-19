@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "wp-content/themes/astra-child"
+		},
+		{
+			"path": "wp-content/plugins/gazelle-social-gallery"
 		}
 	]
 }

@@ -2,7 +2,7 @@
         <div class="container my-4">
             <div class="row py-5">
                 <div class="col-12 col-md-5 col-lg-3 mb-5 mb-lg-0">
-                    <img src="img/logo-white.png" width="146" height="140">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logo-white.png" width="146" height="140">
                     <p class="text-4 mb-1">
                         bringing the taset of Nigeria
                         to homes and events across
@@ -54,13 +54,13 @@
                     <h5>Follow Us</h5>
                     <div class="d-flex mb-3">
                         <a href="#" class="footer-logo" target="_blank">
-                            <img src="img/logos/ig-img.png" class="rounded-circle">
+                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logos/ig-img.png" class="rounded-circle">
                         </a>
                         <a href="#" class="footer-logo" target="_blank">
-                            <img src="img/logos/fb-img.png" class="rounded-circle">
+                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logos/fb-img.png" class="rounded-circle">
                         </a>
                         <a href="#" class="footer-logo" target="_blank">
-                            <img src="img/logos/whatsapp-img.png" class="rounded-circle">
+                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logos/whatsapp-img.png" class="rounded-circle">
                         </a>
                     </div>
 
