@@ -1,28 +1,38 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+$page_id = get_option('page_on_front');
+$hero     = get_post_meta($page_id, 'gau_home_hero_text', true);
+$support = get_post_meta($page_id, 'gcm_home_support', true);
+$desktop_id = get_post_meta($page_id, 'gcm_home_desktop', true);
+$mobile_id  = get_post_meta($page_id, 'gcm_home_mobile', true);
+$default = get_stylesheet_directory_uri() . '/assets/img/gazelle-banner.jpg';
+$desktop = $desktop_id ? wp_get_attachment_image_url($desktop_id, 'general-banner-desktop') : $default;
+$mobile_default = get_stylesheet_directory_uri() . '/assets/img/mobile_desktop.jpg';
+$mobile_desktop = $mobile_id ? wp_get_attachment_image_url($mobile_id, 'general-banner-mobile') : $mobile_default;
+
+
+?>
 
 <div role="main" class="main">
 	<section 
 	class="hero-banner" 
-	style="--hero-desktop: url('../img/gazelle-banner.jpg');
-					--hero-mobile: url('../img/hero-mobile.jpg');">
+	style="--hero-desktop: url('<?php echo esc_url($desktop); ?>');
+					--hero-mobile: url('<?php echo esc_url($mobile_desktop); ?>');">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-12">
 					<span class="badge border bg-secondary badge-banner border-secondary text-white  mb-2">AUTHENTIC NIGERIAN FOOD</span>
 					<h1 class="banner-heading">
-						Fresh Nigerian Meals in 
-						the Netherlands
+						<?php echo esc_html($hero); ?>
 					</h1>
 					<p class="banner-para">
-						Enjoy delicious, homemade Nigerian meals<br>
-						made with love. Meal prep, bulk orders and<br>
-						catering for all occasions.
+						<?php echo esc_html($support); ?>
 					</p>
-					<a href="#" class="btn banner-btn  rounded-4">
-						<i class="fa-brands fa-whatsapp fs-5"></i>
-						Order on WhatsApp
+					<a href="<?php echo esc_url( get_post_type_archive_link('gpp_pricing_plan') ); ?>" class="btn banner-btn  rounded-4" target="_blank">
+						<i class="icon-briefcase fs-5"></i>
+						View Catering
 					</a>
-					<a href="#" class="btn banner-secondary-btn banner-secondary-btn-outline mobile-menu-btn rounded-4">
+					<a href="<?php echo esc_url( wc_get_page_permalink('shop') ); ?>" target="_blank" class="btn banner-secondary-btn banner-secondary-btn-outline mobile-menu-btn rounded-4">
 						<i class="icon-book-open fs-6"></i>
 						View Menu
 					</a>
@@ -49,7 +59,7 @@
 				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
 					<div class="card service-container rounded-3">
 						<div class="service-container-img">
-							<img   src="img/menus/meal-prep.jpg" alt="Card Image">
+							<img   src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/menus/meal-prep.jpg" alt="Meal Prep">
 						</div>
 						<div class="card-body px-3 pt-3 service-content shadow-sm">
 							<div class="service-icon me-2 bg-primary">
@@ -61,7 +71,7 @@
 								Weekly meal prep for busy
 								individuals and families
 								</p>
-								<a href="/" class="read-more text-color-primary font-weight-semibold text-2">Read More <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
+								<a href="<?php echo get_permalink( get_page_by_path("meal-pre")) ?>" class="read-more text-color-primary font-weight-semibold text-2">Read More <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
 							</div>
 						</div>
 					</div>
@@ -69,7 +79,7 @@
 				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
 					<div class="card service-container rounded-3">
 						<div class="service-container-img">
-							<img   src="img/menus/bulk-order.jpg" alt="Card Image">
+							<img   src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/menus/bulk-order.jpg" alt="Bulk Order">
 						</div>
 						<div class="card-body px-3 pt-3 service-content shadow-sm">
 							<div class="service-icon me-2 bg-lightred">
@@ -81,7 +91,9 @@
 								Order in bulk for parties,
 								events, churches and more.
 								</p>
-								<a href="/" class="read-more text-color-primary font-weight-semibold text-2">Read More <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
+								<a 
+								href="<?php echo esc_url( wc_get_page_permalink('shop') ); ?>" 
+								class="read-more text-color-primary font-weight-semibold text-2">Read More <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
 							</div>
 						</div>
 					</div>
@@ -89,7 +101,7 @@
 				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
 					<div class="card service-container rounded-3">
 						<div class="service-container-img">
-							<img   src="img/menus/catering.jpg" alt="Card Image">
+							<img   src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/menus/catering.jpg" alt="Catering">
 						</div>
 						<div class="card-body px-3 pt-3 service-content shadow-sm">
 							<div class="service-icon me-2 bg-secondary">
@@ -101,7 +113,7 @@
 									Catering for parties,weddings,
 									corporate events & more.
 								</p>
-								<a href="/" class="read-more text-color-primary font-weight-semibold text-2">Read More <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
+								<a href="<?php echo esc_url( get_post_type_archive_link('gpp_pricing_plan') ); ?>" class="read-more text-color-primary font-weight-semibold text-2">Read More <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
 							</div>
 						</div>
 					</div>
@@ -163,203 +175,10 @@
 		</div>
 	</section>
 
-	<section class="py-4 bg-primary">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-2 d-flex align-items-center justify-content-center">
-					<h2 class="how-to-order">How to <br>
-						Order
-					</h2>
-				</div>
-				<div class="col-lg-10">
-					<div class="row">
-						<div class="col-lg-3 col-md-6 d-flex align-items-center">
-							<div class="how-step-box">
-								<div class="how-step-icon">
-									<i class="icon-notebook"></i>
-								</div>
-								<div class="how-step-content">
-									<p class="how-step-number">1</p>
-									<h4>Browse Menu</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing metus elit.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 d-flex align-items-center">
-							<div class="how-step-box">
-								<div class="how-step-icon">
-									<i class="icon-cup"></i>
-								</div>
-								<div class="how-step-content">
-									<p class="how-step-number">2</p>
-									<h4>Choose Your Meal</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing metus elit.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 d-flex align-items-center">
-							<div class="how-step-box">
-								<div class="how-step-icon">
-									<i class="fa-brands fa-whatsapp"></i>
-								</div>
-								<div class="how-step-content">
-									<p class="how-step-number">3</p>
-									<h4>Order on WhatsApp</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing metus elit.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 d-flex align-items-center">
-							<div class="how-step-box">
-								<div class="how-step-icon">
-									<i class="icon-emotsmile"></i>
-								</div>
-								<div class="how-step-content">
-									<p class="how-step-number">4</p>
-									<h4>Confirm & Enjoy</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing metus elit.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-				
-			</div>
-		</div>
-	</section>
+	
 
-	<section class="section section section-text-light section-background section-center section-overlay-opacity section-overlay-opacity-scale-4" 
-	style="background: url(img/order-man.jpg) no-repeat center/cover;">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<h2 class="section-title">What Our Customers Say</h2>
-				</div>
-				<div class="col-lg-12">
-					<div class="social-container">
-						<div class="owl-carousel owl-theme stage-margin" data-plugin-options="{'items': 6, 'margin': 10, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40,
-						'responsive':{
-								'0':{'items':1},
-								'576':{'items':2},
-								'768':{'items':2},
-								'992':{'items':3},
-								'1200':{'items':3}
-							}
-							}">
-							<div>
-								<a class="testimonial d-block img-thumbnail-hover-icon lightbox" href="img/reviews/review1.jpg" data-plugin-options="{'type':'image'}">
-									<img src="img/reviews/review1.jpg" alt="Project Image">
-								</a>
-								
-							</div>
-							<div>
-								<a class="testimonial d-block img-thumbnail-hover-icon lightbox" href="img/reviews/review1.jpg" data-plugin-options="{'type':'image'}">
-									<img src="img/reviews/review2.jpg" alt="Project Image">
-								</a>
-							</div>
-							<div>
-								<a class="testimonial d-block img-thumbnail-hover-icon lightbox" href="img/reviews/review1.jpg" data-plugin-options="{'type':'image'}">
-									<img src="img/reviews/review3.jpg" alt="Project Image">
-								</a>
-							</div>
-							<div>
-								<a class="testimonial d-block img-thumbnail-hover-icon lightbox" href="img/reviews/review1.jpg" data-plugin-options="{'type':'image'}">
-									<img src="img/reviews/review4.jpg" alt="Project Image">
-								</a>
-							</div>
-							<div>
-								<a class="testimonial d-block img-thumbnail-hover-icon lightbox" href="img/reviews/review1.jpg" data-plugin-options="{'type':'image'}">
-									<img src="img/reviews/review5.jpg" alt="Project Image">
-								</a>
-							</div>
-							<div>
-								<a class="testimonial d-block img-thumbnail-hover-icon lightbox" href="img/reviews/review1.jpg" data-plugin-options="{'type':'image'}">
-									<img src="img/reviews/review5.jpg" alt="Project Image">
-								</a>
-							</div>
-							<div>
-								<a class="testimonial d-block img-thumbnail-hover-icon lightbox" href="img/reviews/review1.jpg" data-plugin-options="{'type':'image'}">
-									<img src="img/reviews/review6.jpg" alt="Project Image">
-								</a>
-							</div>
-							<div>
-								<a class="testimonial d-block img-thumbnail-hover-icon lightbox" href="img/reviews/review1.jpg" data-plugin-options="{'type':'image'}">
-									<img src="img/reviews/review7.jpg" alt="Project Image">
-								</a>
-							</div>
-							
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="section section section-text-light section-background section-center section-overlay-opacity section-overlay-opacity-scale-4" 
-	style="background: url(img/order-man.jpg) no-repeat center/cover;">
-		<div class="container">
-			<div class="row">
-				
-				<div class="col-lg-12">
-					<div class="social-container">
-						<div class="d-flex justify-content-between">
-							<h4 class="social-proof">Follow us on instagram </h4>
-
-							<a href="#" class="social-handle">@gazellekitchen</a>
-							
-						</div>
-						<div class="row gx-0 gy-0">
-							<div class="col-lg-3 col-md-3 col-sm-6 col-6">
-								<a href="img/menus/catering.jpg" class="img-thumbnail-hover-icon lightbox ig-img-container" data-plugin-options="{'type':'image'}">
-									<img src="img/menus/catering.jpg">
-								</a>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-6">
-								<a href="img/menus/meal-prep.jpg" class="img-thumbnail-hover-icon lightbox ig-img-container" data-plugin-options="{'type':'image'}">
-									<img src="img/menus/meal-prep.jpg">
-								</a>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-6">
-								<a href="img/menus/bulk-order.jpg" class="img-thumbnail-hover-icon lightbox ig-img-container" data-plugin-options="{'type':'image'}">
-									<img src="img/menus/bulk-order.jpg">
-								</a>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-6">
-								<a href="img/menus/catering.jpg" class="img-thumbnail-hover-icon lightbox ig-img-container" data-plugin-options="{'type':'image'}">
-									<img src="img/menus/catering.jpg">
-								</a>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-6">
-								<a href="img/menus/catering.jpg" class="img-thumbnail-hover-icon lightbox ig-img-container" data-plugin-options="{'type':'image'}">
-									<img src="img/menus/catering.jpg">
-								</a>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-6">
-								<a href="img/menus/meal-prep.jpg" class="img-thumbnail-hover-icon lightbox ig-img-container" data-plugin-options="{'type':'image'}">
-									<img src="img/menus/meal-prep.jpg">
-								</a>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-6">
-								<a href="img/menus/bulk-order.jpg" class="img-thumbnail-hover-icon lightbox ig-img-container" data-plugin-options="{'type':'image'}">
-									<img src="img/menus/bulk-order.jpg">
-								</a>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-6">
-								<a href="img/menus/catering.jpg" class="img-thumbnail-hover-icon lightbox ig-img-container" data-plugin-options="{'type':'image'}">
-									<img src="img/menus/catering.jpg">
-								</a>
-							</div>
-							
-						</div>
-							
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</section>
+	<?php get_template_part( "template-parts/how-to-order" ) ?>
+	<?php get_template_part( "template-parts/social-proof" ) ?>
 		
 </div>
 

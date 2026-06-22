@@ -1,0 +1,5 @@
+.preview{
+    display: flex;
+    float: initial !important;
+    justify-content: flex-start;
+}

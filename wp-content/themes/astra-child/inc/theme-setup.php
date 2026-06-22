@@ -20,6 +20,11 @@ add_action('after_setup_theme', function() {
 
     add_image_size('category-banner-desktop', 1920, 450, true);
     add_image_size('category-banner-mobile', 1080, 1350, true);
+    add_image_size('about-image', 1080, 1350, true);
+    add_image_size('general-banner-desktop', 1920, 450, true);
+    add_image_size('general-banner-mobile', 1080, 1350, true);
+    add_image_size('social-gallery', 1200, 9999, false);
+    add_image_size('social-gallery-ig', 1200, 1200, true);
 
     register_nav_menus([
          'primary' => __('Primary Menu', 'gazelles'),

@@ -14,30 +14,92 @@
                     <div class="row">
                         <div class="col-12 col-lg-3">
                             <h5>Quick Links</h5>
-                            <p class="mb-1"><a href="elements-call-to-action.html" class="text-4 link-hover-style-1">Home</a></p>
-                            <p class="mb-1"><a href="elements-pricing-tables.html" class="text-4 link-hover-style-1">Meal Prep</a></p>
-                            <p class="mb-1"><a href="elements-word-rotator.html" class="text-4 link-hover-style-1">Bulk Orders</a></p>
-                            <p class="mb-1"><a href="elements-tooltips-popovers.html" class="text-4 link-hover-style-1">Cartering</a></p>
+                            <p class="mb-1"><a href="<?php echo esc_url( home_url( "/" ))?>" class="text-4 link-hover-style-1">Home</a></p>
+                            <p class="mb-1"><a href="<?php echo get_permalink( get_page_by_path("about-us")) ?>" class="text-4 link-hover-style-1">About Us</a></p>
+                            <p class="mb-1"><a href="<?php echo get_permalink( get_page_by_path("meal-pre")) ?>" class="text-4 link-hover-style-1">Meal Prep</a></p>
+                            <p class="mb-1"><a href="<?php echo esc_url( wc_get_page_permalink('shop') ); ?>" class="text-4 link-hover-style-1">Bulk Orders</a></p>
+                            <p class="mb-1"><a href="<?php echo esc_url( get_post_type_archive_link('gpp_pricing_plan') ); ?>" class="text-4 link-hover-style-1">Cartering</a></p>
                             
                         </div>
                         <div class="col-12 col-lg-4">
-                            <h5>Menu</h5>
-                            <p class="mb-1"><a href="elements-progressbars.html" class="text-4 link-hover-style-1">Proteins</a></p>
-                            <p class="mb-1"><a href="elements-sections.html" class="text-4 link-hover-style-1">Sides</a></p>
-                            <p class="mb-1"><a href="elements-lists.html" class="text-4 link-hover-style-1">Lunch Packets</a></p>
-                            <p class="mb-1"><a href="elements-image-frames.html" class="text-4 link-hover-style-1">Porrige & Soup</a></p>
-                            <p class="mb-1"><a href="elements-testimonials.html" class="text-4 link-hover-style-1">All Menus</a></p>
+                            <h5>Menu Categories</h5>
+                            <?php
+                            $terms = get_terms([
+                                'taxonomy'   => 'product_cat',
+                                'hide_empty' => true,
+                                'exclude'    => [get_option('default_product_cat')] // removes "Uncategorized"
+                            ]);
+
+                            if (!empty($terms) && !is_wp_error($terms)) :
+
+                                foreach ($terms as $term) :
+
+                                    $link = get_term_link($term);
+                                    ?>
+
+                                    <p class="mb-1">
+                                        <a href="<?php echo esc_url($link); ?>"
+                                        class="text-4 link-hover-style-1">
+                                            <?php echo esc_html($term->name); ?>
+                                        </a>
+                                    </p>
+
+                                <?php
+                                endforeach;
+                            endif;
+                            ?>
                         </div>
                         <div class="col-12 col-lg-5">
                             <h5>Contact Us</h5>
-                            <p class="mb-1">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                <a href="elements-progressbars.html" class="text-4 link-hover-style-1">+316 12345678</a>
-                            </p>
-                            <p class="mb-1">
-                                <i class="icon-envelope"></i>
-                                <a href="elements-progressbars.html" class="text-3 link-hover-style-1">info@gazelleskitchen.nl</a>
-                            </p>
+                            <?php if (has_site_contact('sc_phone1')) : ?>
+                                <?php
+                                    $whatsapp_number = site_contact('sc_phone1');
+                                    // Keeps digits only. Example: +31 6 1234 5678 becomes 31612345678
+                                    $whatsapp_link = preg_replace('/\D+/', '', $whatsapp_number);
+                                ?>
+                                <p class="mb-1">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <a
+                                        href="https://wa.me/<?php echo esc_attr($whatsapp_link); ?>"
+                                        class="text-4 link-hover-style-1"
+                                        target="_blank"
+                                        rel="noopener"
+                                    >
+                                        <?php echo esc_html($whatsapp_number); ?>
+                                    </a>
+                                </p>
+                            <?php endif; ?>
+                            <?php if (has_site_contact('sc_phone2')) : ?>
+                                <?php
+                                $phone_number = site_contact('sc_phone2');
+
+                                // Keeps + and digits for a proper tel: link
+                                $phone_link = preg_replace('/[^0-9+]/', '', $phone_number);
+                                ?>
+                                <p class="mb-1">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <a
+                                        href="tel:<?php echo esc_attr($phone_link); ?>"
+                                        class="text-4 link-hover-style-1"
+                                    >
+                                        <?php echo esc_html($phone_number); ?>
+                                    </a>
+                                </p>
+                            <?php endif; ?>
+                            <?php if (has_site_contact('sc_email1')) : ?>
+                                <?php $email = site_contact('sc_email1'); ?>
+                                <p class="mb-1">
+                                    <i class="icon-envelope"></i>
+                                    <a href="mailto:<?php echo esc_attr(antispambot($email)); ?>" class="text-3 link-hover-style-1"><?php echo $email; ?></a>
+                                </p>
+                            <?php endif; ?>
+                            <?php if (has_site_contact('sc_email2')) : ?>
+                                <?php $email = site_contact('sc_email2'); ?>
+                                <p class="mb-1">
+                                    <i class="icon-envelope"></i>
+                                    <a href="mailto:<?php echo esc_attr(antispambot($email)); ?>" class="text-3 link-hover-style-1"><?php echo $email; ?></a>
+                                </p>
+                            <?php endif; ?>
                             <p class="mb-1">
                                 <i class="icon-location-pin"></i>
                                 <a href="elements-progressbars.html" class="text-4 link-hover-style-1">Netherlands</a>
@@ -53,21 +115,42 @@
                 <div class="col-12 col-lg-3">
                     <h5>Follow Us</h5>
                     <div class="d-flex mb-3">
-                        <a href="#" class="footer-logo" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logos/ig-img.png" class="rounded-circle">
-                        </a>
-                        <a href="#" class="footer-logo" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logos/fb-img.png" class="rounded-circle">
-                        </a>
-                        <a href="#" class="footer-logo" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logos/whatsapp-img.png" class="rounded-circle">
-                        </a>
+                        <?php if (has_site_contact('sc_instagram')) : ?>
+                            <a href="<?php echo site_contact('sc_instagram'); ?>" class="footer-logo" target="_blank">
+                                <img 
+                                src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logos/ig-img.png" 
+                                class="rounded-circle" alt="Instagram">
+                            </a>
+                         <?php endif; ?>
+                        <?php if (has_site_contact('sc_facebook')) : ?>
+                            <a href="<?php echo site_contact('sc_facebook'); ?>" class="footer-logo" target="_blank">
+                                <img 
+                                src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logos/fb-img.png" 
+                                class="rounded-circle" alt="Facebook">
+                            </a>
+                        <?php endif; ?>
+                        <?php if (has_site_contact('sc_facebook')) : ?>
+                            <a href="<?php echo site_contact('sc_tiktok'); ?>" class="footer-logo" target="_blank">
+                                <img 
+                                src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logos/tiktok.png" 
+                                class="rounded-circle" alt="Tiktok">
+                            </a>
+                         <?php endif; ?>
                     </div>
-
-                    <a href="#" class="btn btn-primary">
+                    <?php if (has_site_contact('sc_phone1')) : ?>
+                      <?php
+                        $whatsapp_number = site_contact('sc_phone1');
+                        // Keeps digits only. Example: +31 6 1234 5678 becomes 31612345678
+                        $whatsapp_link = preg_replace('/\D+/', '', $whatsapp_number);
+                     ?>
+                    <a href="https://wa.me/<?php echo esc_attr($whatsapp_link); ?>" 
+                      target="_blank"
+                       rel="noopener"
+                      class="btn btn-primary">
                         <i class="fa-brands fa-whatsapp"></i>
                         Order on WhatsApp
                     </a>
+                    <?php endif; ?>
                     
                 </div>
             </div>
@@ -77,7 +160,7 @@
                 <div class="row py-4">
                     <div class="col mobile-footer-info d-flex align-items-center justify-content-between mb-4 mb-lg-0">
                         <p>
-                            © 2026 Gazelles Kitchen. All Rights Reserved.
+                            © <?php echo date("Y") ?> Gazelles Kitchen. All Rights Reserved.
                         </p>
                         <p>
                             Made with love by 

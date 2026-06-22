@@ -17,6 +17,7 @@ $desktop_url = $desktop_id
 $mobile_url = $mobile_id
     ? wp_get_attachment_image_url($mobile_id, 'category-banner-mobile')
     : $default_mobile;
+   
 ?>
 <div role="main" class="main">
     <section 

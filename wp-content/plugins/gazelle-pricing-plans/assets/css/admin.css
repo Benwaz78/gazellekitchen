@@ -1,0 +1,14 @@
+.gpp-meta-fields {
+    max-width: 850px;
+}
+
+.gpp-feature-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.gpp-feature-item input {
+    flex: 1;
+}

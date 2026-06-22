@@ -344,6 +344,18 @@ html.sticky-header-active #header .header-body {
     color:#fff !important;
 }
 
+.meal-prep-header-description{
+    width: 50%;
+    font-size: 0.95rem;
+    font-family: "Poppins Medium", sans-serif;
+    margin: 2px 0 10px 0;
+}
+
+.menus-prep-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
 .gazelle-page-header{
     background-color: var(--secondary-100);
     padding: 20px 0 5px 0 !important;
@@ -358,6 +370,13 @@ html.sticky-header-active #header .header-body {
 .menu-header-padding{
     padding-top:100px; 
     padding-bottom:30px;
+}
+
+.section-background{
+    padding: 350px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .gazelle-page-header-bg-container h1{
@@ -381,6 +400,12 @@ html.sticky-header-active #header .header-body {
     margin: 2px 0 10px 0;
     color: #423e3e;
     width: 50%;
+}
+
+.list.list-icons.list-icons-style-3 li {
+    padding-top: 5px;
+    padding-left: 36px;
+    margin-left: -36px;
 }
 
 
@@ -566,10 +591,17 @@ ul.nav-list li > a.active::before {
    border:2px solid var(--secondary);
 }
 
+.contact-list.list-icons.list-icons-style-2 li {
+    padding-top: 5px;
+    padding-left: 36px;
+    margin-left: -36px;
+}
+
 .banner-para{
     color:#fff;
     font-size: 1rem;
     font-style: italic;
+    width: 70%;
 }
 
 .country-banner-text{

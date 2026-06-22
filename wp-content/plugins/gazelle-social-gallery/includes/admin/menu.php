@@ -33,7 +33,7 @@ add_action('admin_menu', function () {
         'Instagram',
         'manage_options',
         'gazelle-instagram',
-        'gazelle_instagram_page'
+        'gazelle_ig_page'
     );
 
 });
