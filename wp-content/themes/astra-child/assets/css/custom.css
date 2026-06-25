@@ -591,6 +591,20 @@ ul.nav-list li > a.active::before {
    border:2px solid var(--secondary);
 }
 
+.header-nav-features-cart{
+    margin-left: 3rem;
+}
+
+.variation-option{
+    text-transform: uppercase;
+}
+
+.variation-option.active{
+ background-color: var(--secondary) !important;
+ color:#fff;
+ border-color: var(--secondary);
+}
+
 .contact-list.list-icons.list-icons-style-2 li {
     padding-top: 5px;
     padding-left: 36px;
@@ -1188,6 +1202,35 @@ section.section {
       max-height: 100%;
   }
 
+#header .header-btn-collapse-nav{
+    margin-right: 9rem;
+    display: flex;
+    align-items: center;
+}
+
+.header-btn-collapse-nav i{
+    margin-right: 0.3rem;
+}
+
+.header-nav-features-cart{
+    margin-left: 9rem;
+}
+
+
+.added {
+    background-color: var(--secondary) !important;
+    /* color: #fff; */
+}
+
+.ajax-add-to-cart.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.ajax-add-to-cart.added {
+    background: #28a745 !important;
+    color: #fff !important;
+}
 
   .hero-banner{
       min-height: 500px;

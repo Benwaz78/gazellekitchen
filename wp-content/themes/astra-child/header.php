@@ -42,6 +42,18 @@
 											Menu
 										</button>
 									</div>
+									<div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+										
+										<div class="header-nav-feature header-nav-features-cart d-inline-flex">
+											<a href="#" class="header-nav-features-toggle" aria-label="">
+												<i class="fa-solid fa-cart-shopping text-white"></i>
+												<span class="cart-info">
+													<span class="cart-qty"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+												</span>
+											</a>
+											<?php gazelle_header_mini_cart(); ?>
+										</div>
+									</div>
 									
 								</div>
 							</div>

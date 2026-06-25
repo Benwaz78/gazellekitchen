@@ -13,7 +13,7 @@ $mobile_desktop = $mobile_id ? wp_get_attachment_image_url($mobile_id, 'general-
 
 ?>
 
-<div role="main" class="main">
+<div role="main" class="main shop">
 	<section 
 	class="hero-banner" 
 	style="--hero-desktop: url('<?php echo esc_url($desktop); ?>');

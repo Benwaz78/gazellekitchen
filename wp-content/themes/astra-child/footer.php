@@ -19,6 +19,7 @@
                             <p class="mb-1"><a href="<?php echo get_permalink( get_page_by_path("meal-pre")) ?>" class="text-4 link-hover-style-1">Meal Prep</a></p>
                             <p class="mb-1"><a href="<?php echo esc_url( wc_get_page_permalink('shop') ); ?>" class="text-4 link-hover-style-1">Bulk Orders</a></p>
                             <p class="mb-1"><a href="<?php echo esc_url( get_post_type_archive_link('gpp_pricing_plan') ); ?>" class="text-4 link-hover-style-1">Cartering</a></p>
+                            <p class="mb-1"><a href="<?php echo get_permalink( get_page_by_path("contact-us")) ?>" class="text-4 link-hover-style-1">Contact Us</a></p>
                             
                         </div>
                         <div class="col-12 col-lg-4">

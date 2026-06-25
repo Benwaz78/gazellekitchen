@@ -1,5 +1,5 @@
 <?php
-$product_id = get_query_var('product_id') ?: get_the_ID();
+$product_id = get_the_ID();
 $product = wc_get_product($product_id);
 $image_url = get_the_post_thumbnail_url(
     $product_id,
@@ -30,8 +30,9 @@ $title = get_the_title($product_id);
                        <?php echo esc_html($card_desc) ?>
                     </p>
                     <div class="d-flex justify-content-between align-items-center">
+                        
                         <span class="menu-price">
-                            &euro;<?php echo esc_html($price) ?>
+                            &euro;<?php echo gazelle_get_price($product_id, false) ?>
                         </span>
                         <a href="<?php echo esc_url($product_url); ?>" 
                         class="text-secondary font-weight-semibold text-2">View Details <i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
@@ -39,12 +40,35 @@ $title = get_the_title($product_id);
                     
                 </div>	
                 
-                <a href="#" class="btn rounded-0 cart-fs  py-2 w-100 btn-primary">
-                <i class="icon-basket"></i>
-                    Add To Cart
+                 <a href="#menuProduct<?php echo esc_html($product_id) ?>" data-product_id="<?php echo esc_attr($product_id); ?>" data-bs-toggle="modal" class="btn rounded-0 cart-fs ajax-add-to-cart  py-2 w-100 btn-primary">
+                    <i class="icon-basket"></i>
+                    Choose
                 </a>
             </div>
 
         </div>
     </div>
 </article>
+
+<div class="modal fade" id="menuProduct<?php echo esc_html($product_id) ?>" tabindex="-1" aria-labelledby="menuProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 overflow-hidden">
+
+            <!-- Header -->
+            <div class="modal-header border-0 pb-0">
+                <button
+                    type="button"
+                    class="btn-close ms-auto"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body pt-2 px-1 px-lg-2 pb-2 pb-lg-2">
+                <?php get_template_part( "template-parts/components/product-content" ) ?>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -19,7 +19,7 @@ $mobile_url = $mobile_id
     : $default_mobile;
    
 ?>
-<div role="main" class="main">
+<div role="main" class="main shop">
     <section 
         class="gazelle-page-header-bg-container menu-header-padding" 
         style="--page-desktop: url('<?php echo esc_url($desktop_url); ?>');

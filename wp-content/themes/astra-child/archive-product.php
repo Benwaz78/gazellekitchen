@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div role="main" class="main">
+<div role="main" class="main shop">
 
     <section 
 				class="gazelle-page-header-bg-container menu-header-padding" 

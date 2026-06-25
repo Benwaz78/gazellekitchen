@@ -143,7 +143,7 @@ function gazelles_enqueue_assets() {
     wp_enqueue_script(
         'gazelle-cart',
         $theme_uri . '/assets/js/cart.js',
-        ['jquery'],
+        ['wc-cart-fragments'],
         $version,
         true
     );
