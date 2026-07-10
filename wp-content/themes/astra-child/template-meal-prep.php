@@ -29,6 +29,11 @@ $desktop_banner = $desktop_banner_id
 $mobile_banner = $mobile_banner_id
     ? wp_get_attachment_image_url($mobile_banner_id, 'general-banner-mobile')
     : $default_mobile_banner;
+
+$meal_prep_img = $desktop_banner_id
+    ? wp_get_attachment_image_url($content_image_id, 'menu-detail')
+    : $default_desktop_banner;
+
 ?>
 <div role="main" class="main">
       <section
@@ -62,15 +67,17 @@ $mobile_banner = $mobile_banner_id
         </div>
     </section>
     <section class="section bg-light menus-prep-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <img 
-                    class="rounded"
-                    src="<?php echo esc_url( wp_get_attachment_image_url($content_image_id, 'menu-detail') ); ?>" 
-                    alt="<?php echo esc_attr($title); ?>">
+        <div class="container-fluid gx-0">
+            <div class="row gx-0">
+                <div 
+                class="col-lg-6 meal-prep-img" 
+                style="
+            --page-desktop: url('<?php echo esc_url($meal_prep_img); ?>');
+            --page-mobile: url('<?php echo esc_url($mobile_banner); ?>');
+            ">
+                   
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 p-3 bg-white">
                     
                     <?php echo wp_kses_post(wpautop($content_text))  ?>
 
@@ -80,16 +87,35 @@ $mobile_banner = $mobile_banner_id
                     </h3>
                     <hr>
 
-                    <form class="order-form mt-4">
-                        <div class="mb-2">
-                            <label for="fullName">Fullname*</label>
-                            <input 
-                            id="fullName" 
-                            type="text" 
-                            placeholder="Firstname Lastname*" 
-                            class="form-control" 
-                            name="fullName">
+                    <form method="POST" class="order-form mt-4" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+                        <?php
+                        wp_nonce_field(
+                            'gk_meal_prep_order',
+                            'gk_meal_prep_nonce'
+                        );
+                        ?>
+                        <input type="hidden" name="action" value="gk_meal_prep_order">
+                        <div class="row">
+                            <div class="col-lg-6 mb-2">
+                                <label for="fullName">Fullname*</label>
+                                <input 
+                                id="fullName" 
+                                type="text" 
+                                placeholder="Firstname Lastname*" 
+                                class="form-control" 
+                                name="fullName">
+                            </div>
+                            <div class="col-lg-6 mb-2">
+                                <label for="email">Email</label>
+                                <input 
+                                id="email" 
+                                type="email" 
+                                placeholder="Email*" 
+                                class="form-control" 
+                                name="email">
+                            </div>
                         </div>
+                       
                         <div class="row">
                             <div class="col-lg-6 mb-2">
                                 <label for="phoneNumber">Phone Number*</label>
@@ -112,16 +138,7 @@ $mobile_banner = $mobile_banner_id
                         </div>
                         
                         <div class="row">
-                            <div class="col-lg-6 mb-2">
-                                <label for="quantity">Quantity*</label>
-                                <input 
-                                id="quantity" 
-                                type="number" 
-                                placeholder="Quantity*" 
-                                class="form-control" 
-                                name="quantity">
-                            </div>
-                            <div class="col-lg-6 mb-2">
+                            <div class="col-lg-12 mb-2">
                                 <label for="deliveryDate">Preferred Delivery Date</label>
                                 <input 
                                 id="deliveryDate" 
@@ -138,8 +155,7 @@ $mobile_banner = $mobile_banner_id
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary rounded-3 btn-lg mt-3 w-100">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            Order on WhatsApp
+                            Place Order
                         </button>
                         
                         

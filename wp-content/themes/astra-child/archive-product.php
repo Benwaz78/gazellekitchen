@@ -2,20 +2,20 @@
 <div role="main" class="main shop">
 
     <section 
-				class="gazelle-page-header-bg-container menu-header-padding" 
-				style="--page-desktop: url('<?php echo get_stylesheet_directory_uri() ?>/assets/img/gazelle-banner.jpg');
-				--page-mobile: url('<?php echo get_stylesheet_directory_uri() ?>/assets/img/hero-mobile.jpg');
-				">
-					<div class="container">
-						<div class="row justify-content-start">
-							<div class="col-md-12">
-								<h1 class="text-white">Bulk Orders Menu</h1>
-								<p class="text-white">Browse menu categories to find meals for bulk orders, parties, events, churches, and more.</p>
-								
-							</div>
-						</div>
-					</div>
-				</section>
+        class="gazelle-page-header-bg-container menu-header-padding" 
+        style="--page-desktop: url('<?php echo get_stylesheet_directory_uri() ?>/assets/img/gazelle-banner.jpg');
+        --page-mobile: url('<?php echo get_stylesheet_directory_uri() ?>/assets/img/hero-mobile.jpg');
+        ">
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-md-12">
+                        <h1 class="text-white">Bulk Orders Menu</h1>
+                        <p class="text-white">Browse menu categories to find meals for bulk orders, parties, events, churches, and more.</p>
+                        
+                    </div>
+                </div>
+            </div>
+    </section>
 
 
     <section class="page-list-section bg-light">

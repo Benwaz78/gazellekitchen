@@ -25,6 +25,7 @@ add_action('after_setup_theme', function() {
     add_image_size('general-banner-mobile', 1080, 1350, true);
     add_image_size('social-gallery', 1200, 9999, false);
     add_image_size('social-gallery-ig', 1200, 1200, true);
+    add_image_size('menu-list', 300, 300, true);
 
     register_nav_menus([
          'primary' => __('Primary Menu', 'gazelles'),

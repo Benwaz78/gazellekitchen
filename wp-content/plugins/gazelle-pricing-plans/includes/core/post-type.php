@@ -9,17 +9,17 @@ add_action('init', 'gpp_register_pricing_plan_cpt');
 function gpp_register_pricing_plan_cpt() {
 
     $labels = [
-        'name'               => 'Pricing Plans',
-        'singular_name'      => 'Pricing Plan',
-        'add_new'            => 'Add New Plan',
-        'add_new_item'       => 'Add New Pricing Plan',
-        'edit_item'          => 'Edit Pricing Plan',
-        'new_item'           => 'New Pricing Plan',
-        'view_item'          => 'View Pricing Plan',
-        'search_items'       => 'Search Pricing Plans',
-        'not_found'          => 'No pricing plans found',
-        'not_found_in_trash' => 'No pricing plans found in Trash',
-        'menu_name'          => 'Pricing Plans',
+        'name'               => 'Catering Plans',
+        'singular_name'      => 'Catering Plan',
+        'add_new'            => 'Add New Catering Plan',
+        'add_new_item'       => 'Add New Catering Plan',
+        'edit_item'          => 'Edit Catering Plan',
+        'new_item'           => 'New Catering Plan',
+        'view_item'          => 'View Catering Plan',
+        'search_items'       => 'Search Catering Plans',
+        'not_found'          => 'No Catering Plans found',
+        'not_found_in_trash' => 'No Catering Plans found in Trash',
+        'menu_name'          => 'Catering Plans',
     ];
 
     register_post_type('gpp_pricing_plan', [

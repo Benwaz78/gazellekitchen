@@ -44,7 +44,12 @@ $description = get_post_meta($plan_id, '_gpp_description', true);
                     These packages are available for 45 guests & over
 
                 </p>
-                <form class="order-form">
+                <form class="order-form" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+                    
+                    <?php wp_nonce_field('gk_catering_order', 'gk_catering_nonce'); ?>
+                    <input type="hidden" name="action" value="gk_catering_order">
+                    <input type="hidden" name="plan_id" value="<?php echo get_the_ID(); ?>">
+
                     <div class="mb-2">
                         <label for="fullName">Fullname*</label>
                         <input 
@@ -64,7 +69,7 @@ $description = get_post_meta($plan_id, '_gpp_description', true);
                         name="phone">
                     </div>
                     <div class="mb-2">
-                        <label for="phone">Email*</label>
+                        <label for="email">Email*</label>
                         <input 
                         id="email" 
                         type="email" 
@@ -73,29 +78,28 @@ $description = get_post_meta($plan_id, '_gpp_description', true);
                         name="email">
                     </div>
                     <div class="mb-2">
-                        <label for="phone">Date*</label>
+                        <label for="deliveryDate">Delivery Date*</label>
                         <input 
-                        id="date" 
+                        id="deliveryDate" 
                         type="date" 
                         class="form-control" 
-                        name="date">
+                        name="deliveryDate">
                     </div>
 
                     <div class="mb-2">
-                        <label for="phone">Delivery Location*</label>
+                        <label for="deliveryLocation">Delivery Location*</label>
                         <input 
-                        id="email" 
-                        type="email" 
-                        placeholder="Email*" 
+                        id="deliveryLocation" 
+                        type="text" 
+                        placeholder="Delivery Location*" 
                         class="form-control" 
-                        name="email">
+                        name="deliveryLocation">
                     </div>
-                    
-                    
+                                  
                     <div class="row">
                         <div class="col-lg-12">
-                            <label>Special Instruction</label>
-                            <textarea rows="10" class="form-control" name="specialInstruction"></textarea>
+                            <label for="specialInstruction">Special Instruction</label>
+                            <textarea id="specialInstruction" rows="10" class="form-control" name="specialInstruction"></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary mt-3 w-100">
@@ -108,6 +112,7 @@ $description = get_post_meta($plan_id, '_gpp_description', true);
         </div>
     </div>
 </section>
+<?php get_template_part( "template-parts/components/catering-menus" ) ?>
 
  <?php get_template_part( "template-parts/how-to-order" ) ?>
 <?php get_template_part( "template-parts/social-proof" ) ?>

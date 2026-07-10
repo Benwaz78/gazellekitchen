@@ -1,4 +1,7 @@
-    <footer id="footer" class="mt-0 site-footer">
+   
+<?php get_template_part("template-parts/components/product-modal") ?>
+<div id="gk-toast"></div>
+   <footer id="footer" class="mt-0 site-footer">
         <div class="container my-4">
             <div class="row py-5">
                 <div class="col-12 col-md-5 col-lg-3 mb-5 mb-lg-0">

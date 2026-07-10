@@ -132,22 +132,41 @@ function gazelles_enqueue_assets() {
     );
 
     wp_enqueue_script(
-        'gazelle-custom',
-        $theme_uri . '/assets/js/custom.js',
+        'gazelle-product',
+        $theme_uri . '/assets/js/product.js',
         ['gazelle-theme'],
         $version,
         true
     );
 
+    wp_localize_script(
+    'gazelle-product',
+    'gazelle_ajax',
+    [
+        'ajax_url' => admin_url('admin-ajax.php')
+    ]
+);
+
+
     // Cart Customizations
     wp_enqueue_script(
         'gazelle-cart',
         $theme_uri . '/assets/js/cart.js',
-        ['wc-cart-fragments'],
+        [],
         $version,
         true
     );
 
+    wp_localize_script(
+    'gazelle-cart',
+    'gk_cart',
+    [
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce'    => wp_create_nonce('gk_cart_nonce'),
+    ]
+   );
+
+   
     wp_enqueue_script(
         'gazelle-theme-init',
         $theme_uri . '/assets/js/theme.init.js',

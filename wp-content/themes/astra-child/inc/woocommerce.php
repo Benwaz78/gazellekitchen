@@ -40,24 +40,6 @@ add_filter(
 //     }
 // });
 // http://localhost/gazelleskitchen/?clear-cart=1
-add_filter('woocommerce_add_to_cart_fragments', function ($fragments) {
-
-    ob_start();
-    ?>
-    <span class="cart-qty">
-        <?php echo WC()->cart->get_cart_contents_count(); ?>
-    </span>
-    <?php
-    $fragments['span.cart-qty'] = ob_get_clean();
-
-    ob_start();
-    gazelle_header_mini_cart();
-    $fragments['#headerTopCartDropdown'] = ob_get_clean();
-
-    return $fragments;
-});
-
-
 
 
 function gazelle_get_price($product_id, $formatted = true)
@@ -140,7 +122,7 @@ function gazelle_header_mini_cart() {
                             </p>
 
                             <a
-                                href="<?php echo esc_url($remove_url); ?>"
+                                href="#"
                                 class="btn-remove remove remove_from_cart_button"
                                 data-cart_item_key="<?php echo esc_attr($cart_item_key); ?>"
                                 aria-label="<?php echo esc_attr__('Remove this item', 'gazelles-kitchen'); ?>"
@@ -188,3 +170,130 @@ function gazelle_header_mini_cart() {
     </div>
     <?php
 }
+
+
+add_action('wp_ajax_gk_remove_from_cart', 'gk_remove_from_cart');
+add_action('wp_ajax_nopriv_gk_remove_from_cart', 'gk_remove_from_cart');
+
+function gk_remove_from_cart()
+{
+    check_ajax_referer('gk_cart_nonce', 'nonce');
+
+    $cart_item_key = sanitize_text_field($_POST['cart_item_key']);
+
+    // Get product name BEFORE removing it
+    $product_name = '';
+
+    $cart = WC()->cart->get_cart();
+
+    if (isset($cart[$cart_item_key])) {
+        $product_name = $cart[$cart_item_key]['data']->get_name();
+    }
+
+    error_log(print_r(WC()->cart->get_cart(), true));
+
+    error_log('Key: ' . $cart_item_key);
+
+    // Now remove it
+    WC()->cart->remove_cart_item($cart_item_key);
+
+    // Rebuild mini cart
+    ob_start();
+    gazelle_header_mini_cart();
+    $mini_cart = ob_get_clean();
+
+    wp_send_json_success([
+        'count'        => WC()->cart->get_cart_contents_count(),
+        'mini_cart'    => $mini_cart,
+        'product_name' => $product_name,
+        'cart_url'     => wc_get_cart_url(),
+    ]);
+}
+
+
+
+
+add_action('wp_ajax_gazelle_load_product', 'gazelle_load_product');
+add_action('wp_ajax_nopriv_gazelle_load_product', 'gazelle_load_product');
+
+function gazelle_load_product()
+{
+    $product_id = absint($_POST['product_id']);
+
+    if (!$product_id) {
+        wp_die();
+    }
+
+    global $post;
+
+    $post = get_post($product_id);
+
+    if (!$post) {
+        wp_die();
+    }
+
+    setup_postdata($post);
+
+    get_template_part('template-parts/components/product-content');
+
+    wp_reset_postdata();
+
+    wp_die();
+}
+
+add_action('wp_ajax_gk_add_to_cart', 'gk_add_to_cart');
+add_action('wp_ajax_nopriv_gk_add_to_cart', 'gk_add_to_cart');
+
+function gk_add_to_cart()
+{
+   
+    check_ajax_referer('gk_cart_nonce', 'nonce');
+
+    $product_id   = absint($_POST['product_id'] ?? 0);
+    $quantity     = max(1, absint($_POST['quantity'] ?? 1));
+    $variation_id = absint($_POST['variation_id'] ?? 0);
+
+    $variation = [];
+
+    foreach ($_POST as $key => $value) {
+
+        if (strpos($key, 'attribute_') === 0) {
+            $variation[$key] = sanitize_text_field(wp_unslash($value));
+        }
+
+    }
+
+
+    $added = WC()->cart->add_to_cart(
+        $product_id,
+        $quantity,
+        $variation_id,
+        $variation
+    );
+
+    if (!$added) {
+
+        wp_send_json_error([
+        'message' => wc_get_notices('error')
+    ]);
+
+
+    }
+
+    ob_start();
+    gazelle_header_mini_cart();
+    $mini_cart = ob_get_clean();
+
+    $product = wc_get_product($variation_id ?: $product_id);
+
+    wp_send_json_success([
+        'count'        => WC()->cart->get_cart_contents_count(),
+        'mini_cart'    => $mini_cart,
+        'product_name' => $product ? $product->get_name() : '',
+        'cart_url'     => wc_get_cart_url(),
+    ]);
+
+}
+
+
+

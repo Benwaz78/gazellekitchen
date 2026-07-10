@@ -9,6 +9,17 @@ add_action('admin_init', function () {
     register_setting('site_contacts_group', 'sc_phone2');
     register_setting('site_contacts_group', 'sc_address1');
     register_setting('site_contacts_group', 'sc_address2');
+
+
+    register_setting('site_contacts_group', 'sc_bank_name');
+    register_setting('site_contacts_group', 'sc_account_name');
+    register_setting('site_contacts_group', 'sc_iban');
+    register_setting('site_contacts_group', 'sc_bic_swift');
+    register_setting('site_contacts_group', 'sc_vat_number');
+    register_setting('site_contacts_group', 'sc_kvk_number');
+
+
+
     register_setting('site_contacts_group', 'sc_facebook');
     register_setting('site_contacts_group', 'sc_twitter');
     register_setting('site_contacts_group', 'sc_instagram');
@@ -16,7 +27,7 @@ add_action('admin_init', function () {
 
     add_settings_section(
         'site_contacts_section',
-        'Contact Information',
+        'Business Information',
         null,
         'site-contacts'
     );
@@ -28,6 +39,12 @@ add_action('admin_init', function () {
         'sc_phone2'    => 'Phone 2',
         'sc_address1'   => 'Address 1',
         'sc_address2'   => 'Address 2',
+        'sc_bank_name'   => 'Bank Name',
+        'sc_account_name'   => 'Account Name',
+        'sc_iban'   => 'IBAN',
+        'sc_bic_swift'   => 'BIC/SWIFT',
+        'sc_vat_number'   => 'VAT Number',
+        'sc_kvk_number'   => 'KvK Number',
         'sc_facebook'  => 'Facebook URL',
         'sc_twitter'   => 'Twitter URL',
         'sc_instagram' => 'Instagram URL',

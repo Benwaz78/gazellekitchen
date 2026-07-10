@@ -14,7 +14,7 @@ $image_url = $featured_image ? $featured_image : $default_image;
 
 ?>
 <div role="main" class="main">
-    <section class="section bg-grey">
+    <section class="section bg-grey" id="abt">
         <div class="container bg-white">
             <div class="row">
                 <div class="col-lg-6 p-0">

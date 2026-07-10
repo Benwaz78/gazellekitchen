@@ -9,8 +9,6 @@ $default = get_stylesheet_directory_uri() . '/assets/img/gazelle-banner.jpg';
 $desktop = $desktop_id ? wp_get_attachment_image_url($desktop_id, 'general-banner-desktop') : $default;
 $mobile_default = get_stylesheet_directory_uri() . '/assets/img/mobile_desktop.jpg';
 $mobile_desktop = $mobile_id ? wp_get_attachment_image_url($mobile_id, 'general-banner-mobile') : $mobile_default;
-
-
 ?>
 
 <div role="main" class="main shop">
@@ -174,8 +172,6 @@ $mobile_desktop = $mobile_id ? wp_get_attachment_image_url($mobile_id, 'general-
 			</div>
 		</div>
 	</section>
-
-	
 
 	<?php get_template_part( "template-parts/how-to-order" ) ?>
 	<?php get_template_part( "template-parts/social-proof" ) ?>

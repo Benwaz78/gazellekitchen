@@ -1,6 +1,16 @@
 <?php
-$product_id = get_the_ID();
+$product_id = get_query_var('product_id');
+
+if (!$product_id) {
+    $product_id = get_the_ID();
+}
+
 $product = wc_get_product($product_id);
+
+if (!$product) {
+    return;
+}
+
 $image_url = get_the_post_thumbnail_url(
     $product_id,
     'menu-card'
@@ -13,7 +23,6 @@ $card_desc = gk_get_product_card_description($product_id, 90 );
 $price = $product->get_price();
 $title = get_the_title($product_id);
 ?>
-
 
 <article class="post">
     <div class="card rounded-3 border-0 bg-transparent box-shadow-10 box-shadow-1 box-shadow-1-hover anim-hover-translate-top-10px transition-3ms">
@@ -40,35 +49,14 @@ $title = get_the_title($product_id);
                     
                 </div>	
                 
-                 <a href="#menuProduct<?php echo esc_html($product_id) ?>" data-product_id="<?php echo esc_attr($product_id); ?>" data-bs-toggle="modal" class="btn rounded-0 cart-fs ajax-add-to-cart  py-2 w-100 btn-primary">
+                 <a href="#" data-bs-target="#productModal" data-product-id="<?php echo esc_attr($product_id); ?>" 
+                 data-bs-toggle="modal" 
+                 class="btn rounded-0 open-product-modal cart-fs ajax-add-to-cart  py-2 w-100 btn-primary">
                     <i class="icon-basket"></i>
-                    Choose
+                    Quick View
                 </a>
             </div>
 
         </div>
     </div>
 </article>
-
-<div class="modal fade" id="menuProduct<?php echo esc_html($product_id) ?>" tabindex="-1" aria-labelledby="menuProductModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content border-0 rounded-4 overflow-hidden">
-
-            <!-- Header -->
-            <div class="modal-header border-0 pb-0">
-                <button
-                    type="button"
-                    class="btn-close ms-auto"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                ></button>
-            </div>
-
-            <!-- Body -->
-            <div class="modal-body pt-2 px-1 px-lg-2 pb-2 pb-lg-2">
-                <?php get_template_part( "template-parts/components/product-content" ) ?>
-            </div>
-
-        </div>
-    </div>
-</div>

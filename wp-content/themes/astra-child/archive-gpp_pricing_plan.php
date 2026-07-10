@@ -98,7 +98,10 @@
     </section>
 
   
-     <?php get_template_part( "template-parts/menu-category" ) ?>
+  
+     <?php get_template_part( "template-parts/components/catering-menus" ) ?>
+     <?php //get_template_part( "template-parts/menu-category" ) ?>
+
      <?php get_template_part( "template-parts/how-to-order" ) ?>
     <?php get_template_part( "template-parts/social-proof" ) ?>
 

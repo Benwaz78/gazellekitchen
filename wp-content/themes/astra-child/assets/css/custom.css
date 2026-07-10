@@ -258,8 +258,26 @@ html.sticky-header-active #header .header-body {
     box-shadow: 0 0 3px #0e4408;
 }
 
+#primary {
+    margin: 0;
+}
+
+.page .entry-header {
+    margin-bottom: 1.5em;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 #header .header-nav-main:before {
         background: #0e4408;
+}
+
+.entry-content {
+    word-wrap: break-word;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #newLogoContainer img{
@@ -359,6 +377,11 @@ html.sticky-header-active #header .header-body {
 .gazelle-page-header{
     background-color: var(--secondary-100);
     padding: 20px 0 5px 0 !important;
+}
+
+.meal-prep-img{
+    background-image: var(--page-desktop) !important;
+    background: no-repeat center/cover;
 }
 
 .gazelle-page-header-bg-container{
@@ -1203,7 +1226,7 @@ section.section {
   }
 
 #header .header-btn-collapse-nav{
-    margin-right: 9rem;
+    margin-right: 8rem;
     display: flex;
     align-items: center;
 }
@@ -1213,9 +1236,19 @@ section.section {
 }
 
 .header-nav-features-cart{
-    margin-left: 9rem;
+    margin-left: 8rem;
 }
 
+.meal-prep-header-description{
+    width: 100%;
+}
+
+.moving-card-title{
+    margin-top: 200px;
+}
+#abt .col-half-section-left{
+  background-color: #fff;
+}
 
 .added {
     background-color: var(--secondary) !important;
@@ -1339,6 +1372,11 @@ section.section {
             padding: 20px 0 5px 0 !important;
         }
 
+         .meal-prep-img{
+            background-image: var(--page-mobile) !important;
+            background: no-repeat center/cover;
+        }
+
         .gazelle-page-header-bg-container{
             background-image: var(--page-mobile) !important;
             padding: 70px 0 120px 0 !important;
@@ -1436,6 +1474,360 @@ section.section {
 .post-date{
 	width: 60px;
 	height: 60px;
+}
+
+
+/* Gazelle Meal Prep Styling  Start  */
+.gmp-success{
+
+    background:
+    linear-gradient(rgba(12,17,29,.90),rgba(12,17,29,.90)),
+    url("../images/meal-prep-bg.jpg") center/cover;
+
+    padding:70px 0;
+    text-align:center;
+    color:#fff;
+
+}
+
+.gmp-success-icon{
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    background:#22c55e;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
+    margin-bottom:25px;
+
+}
+
+.gmp-badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#1e293b;
+
+    color:#cbd5e1;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+    letter-spacing:.5px;
+
+}
+
+.gmp-success h1{
+
+    font-size:48px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.gmp-description{
+
+    max-width:650px;
+
+    margin:0 auto 45px;
+
+    color:#cbd5e1;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+.gmp-details{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:45px;
+
+}
+
+.gmp-detail{
+
+    min-width:180px;
+
+    padding:20px 25px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.gmp-detail small{
+
+    display:block;
+
+    color:#94a3b8;
+
+    margin-bottom:8px;
+
+    text-transform:uppercase;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+}
+
+.gmp-detail strong{
+
+    font-size:18px;
+
+    color:#fff;
+
+}
+
+.gmp-btn-whatsapp{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px 42px;
+
+    border-radius:50px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.gmp-btn-whatsapp:hover{
+
+    transform:translateY(-2px);
+
+    background:#20ba5a;
+
+    color:#fff;
+
+}
+
+@media(max-width:768px){
+
+    .gmp-success{
+
+        padding:50px 20px;
+
+    }
+
+    .gmp-success h1{
+
+        font-size:34px;
+
+    }
+
+    .gmp-description{
+
+        font-size:16px;
+
+    }
+
+    .gmp-detail{
+
+        width:100%;
+
+    }
+
+}
+/* Gazelle Meal Prep Styling  End  */
+
+#gk-toast{
+
+    position:fixed;
+
+    top:20px;
+    right:20px;
+
+    width:320px;
+
+    background:#fff;
+
+    color:#222;
+
+    border-radius:10px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+    overflow:hidden;
+
+    z-index:999999;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(-20px);
+
+    transition:.3s;
+}
+
+#gk-toast.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+#gk-toast-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px;
+
+}
+
+#gk-toast-icon{
+
+    color:#198754;
+
+    font-size:22px;
+
+}
+
+#gk-toast-title{
+
+    font-weight:700;
+
+}
+
+#gk-toast-text{
+
+    font-size:14px;
+
+    color:#666;
+
+}
+
+#gk-toast-footer{
+
+    background:#f8f8f8;
+
+    padding:12px;
+
+    text-align:right;
+
+}
+
+#gk-toast-footer a{
+
+    background:#198754;
+
+    color:#fff;
+
+    padding:8px 16px;
+
+    border-radius:6px;
+
+    text-decoration:none;
+
+}
+
+@media (max-width: 768px) {
+
+    #gk-toast{
+
+        left:15px;
+        right:15px;
+
+        top:auto;
+        bottom:20px;
+
+        width:auto;
+
+        transform:translateY(100px);
+
+    }
+
+    #gk-toast.show{
+
+        transform:translateY(0);
+
+    }
+
+    #gk-toast-header{
+
+        padding:12px;
+
+    }
+
+    #gk-toast-title{
+
+        font-size:15px;
+
+    }
+
+    #gk-toast-text{
+
+        font-size:13px;
+
+    }
+
+    #gk-toast-footer{
+
+        text-align:center;
+
+    }
+
+    #gk-toast-footer a{
+
+        display:block;
+
+        width:100%;
+
+    }
+
 }
 
 .footer-logo{
