@@ -1,0 +1,68 @@
+.gpp-meta-fields {
+    max-width: 850px;
+}
+
+.gpp-feature-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.gpp-feature-item input {
+    flex: 1;
+}
+
+.gkc-status{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    text-transform:capitalize;
+
+    color:#fff;
+
+}
+
+.gkc-status-pending{
+
+    background:#f59e0b;
+
+}
+
+.gkc-status-processing{
+
+    background:#3b82f6;
+
+}
+
+.gkc-status-confirmed{
+
+    background:#10b981;
+
+}
+
+.gkc-status-out_for_delivery{
+
+    background:#8b5cf6;
+
+}
+
+.gkc-status-delivered{
+
+    background:#16a34a;
+
+}
+
+.gkc-status-cancelled{
+
+    background:#dc2626;
+
+}

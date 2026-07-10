@@ -1,0 +1,17 @@
+.gazelle-gallery-item img{
+    width: 200px !important;
+}
+
+button.gazelle-remove-image{
+    cursor: pointer !important;
+    border-style: none !important;
+    background-color: red !important;
+    color: #fff !important;
+    padding: 5px 12px !important;
+    display: inline-block !important;
+    position:absolute !important;
+    top:5px !important;
+    right:5px !important;
+    min-width:auto !important;
+}
+

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "wp-content/themes/astra-child"
+		},
+		{
+			"path": "wp-content/plugins/gazelle-social-gallery"
+		},
+		{
+			"path": "wp-content/plugins/gazelle-meal-prep"
+		},
+		{
+			"path": "wp-content/plugins/gazelle-pricing-plans"
+		},
+		{
+			"path": "wp-content/plugins/gazelles-cms"
+		}
+	]
+}
